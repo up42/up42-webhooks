@@ -1,5 +1,5 @@
 # Code snippet to use with pipedream.com to validate an incoming
-# request (a webhook) from UP42 for jub statuses updates. It acts
+# request (a webhook) from UP42 for job statuses updates. It acts
 # based on the job statuses we are interested in.
 # All the information is available and can be passed on to other steps
 # in a workflow.
@@ -60,7 +60,7 @@ computed_sig = base64.b64encode(digest(bytes(secret,  "UTF-8"),
 # workflow. I.e., no existing subsequent steps will be executed.
 assert compare_digest(sig_header_value, computed_sig), "Cannot authenticate incoming HTTP request."
 
-# Filter the response based on the job status we are interested in.
+# Filter the response based on the job status that we are interested in.
 def filter_response_job_status(current_status: str,
                                interesting_statuses: list[str]) -> bool:
     if os.environ.get("is_test") == "yes":

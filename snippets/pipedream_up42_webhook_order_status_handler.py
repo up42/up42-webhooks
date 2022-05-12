@@ -59,7 +59,7 @@ computed_sig = base64.b64encode(digest(bytes(secret,  "UTF-8"),
 # workflow. I.e., no existing subsequent steps will be executed.
 assert compare_digest(sig_header_value, computed_sig), "Cannot authenticate incoming HTTP request."
 
-# Filter the response based on the job status we are interested in.
+# Filter the response based on the order status that we are interested in.
 def filter_response_order_status(current_status: str, interesting_statuses: list[str]) -> bool:
     if os.environ.get("is_test") == "yes":
         return True
@@ -72,7 +72,7 @@ current_event_type = steps["trigger"]["event"]["body"]["event"]
 assert current_event_type == "order.status", f"Event type mismatch: {current_event_type}."
 
 # The list of statuses that we are interested in.
-notifiable_statuses = ["FAILED PERMANENTLY", "PLACED", "FULFILLED"]
+notifiable_statuses = ["FULFILLED"]
 
 # Filter the response based on the statuses we are interested in.
 filter_response_order_status(steps["trigger"]["event"]["body"]["body"]["status"], notifiable_statuses)
