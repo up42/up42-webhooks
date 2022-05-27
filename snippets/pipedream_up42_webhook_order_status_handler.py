@@ -14,6 +14,7 @@ import re
 import base64
 from hmac import digest, compare_digest
 from hashlib import sha256
+from time import time
 
 # Get the response headers.
 response_headers = steps["trigger"]["event"]["headers"]
