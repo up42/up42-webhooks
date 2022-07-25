@@ -46,6 +46,14 @@ The `openresty` directory contains:
    key-value store, that persists across requests and OpenResty
    reloads, so that we can consult them at our leisure.
 
+## Jupyter notebook
+
+In the `notebook` directory there is a Python
+[Jupyter](https://jupyter.org) notebook that makes use of the
+[SDK webhooks](https://sdk.up42.com/webhooks/) implementation.
+
+ * `sdk_webhooks_testing.ipynb`.
+
 ## Makefile
 
 The server side setup runs from a Makefile. The configuration for the
