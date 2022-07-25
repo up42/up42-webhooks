@@ -5,7 +5,7 @@
 This repository contains code for using webhooks with
 [UP42](https://up42.com).
 
-It is divided in several parts:
+It is divided in two parts:
 
  1. Low code version with Python snippets to be used together with
     [pipedream](https://pipedream.com).
@@ -13,7 +13,7 @@ It is divided in several parts:
     setup that relies on pipedream for request validation and
     forward the webhook to OpenResty. Using
     [ngrok](https://ngrok.com) to create a tunnel. In our OpenResty
-    instance we keep a record of the received webhooks.
+    instance we use embebbed Lua to keep a record of the received webhooks.
 
 ## Pipedream snippets
 
