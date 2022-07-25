@@ -26,8 +26,38 @@ filenames are self explanatory:
  * `pipedream_up42_webhook_order_status_handler.py`: incoming HTTP
    validation and order status filtering.
 
-For a detailed usage of the code snippets please refer to the UP42
-blog post.
+ * `validate_webhook.py`: incoming HTTP validation for **both** job
+   and order status filtering.
+
+ * `httpx_client_ngrok.py`: forward the webhook to our local OpenResty
+   instance.
+
+
+## OpenResty configuration and Lua module
+
+The `openresty` directory contains:
+
+ * `default.conf`: server configuration.
+
+ * `lua`: directory containing the `up42webhooks.lua` module that
+   implements a webhook record collection system. I.e., all webhook
+   requests forwarded by pipedream get collected in a
+   [in-memory](https://nginx.org/en/docs/dev/development_guide.html#shared_memory)
+   key-value store, that persists across requests and OpenResty
+   reloads, so that we can consult them at our leisure.
+
+## Makefile
+
+The server side setup runs from a Makefile. The configuration for the
+Makefile is in `config.mk`.
+
+## Using this code
+
+For a detailed description of the usage of this code please refer to
+the UP42 blog posts.
+
+ * [Blog post on the "low code" version](https://up42.com/blog/tech/first-step-into-webhooks-no-code-required)
+
 
 ## License
 
