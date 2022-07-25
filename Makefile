@@ -30,4 +30,4 @@ logs:
 
 restart: stop run
 
-.PHONY: run reload test list clean stop
+.PHONY: run reload restart test list clean stop logs

@@ -59,6 +59,18 @@ In the `notebook` directory there is a Python
 The server side setup runs from a Makefile. The configuration for the
 Makefile is in `config.mk`.
 
+The Makefile has the following targets:
+
+ * `run`: run OpenResty from a dockerhub image using port `9888`.
+ * `list`: list the containers using port `9888`.
+ * `test`: test the nginx/OpenResty configuration (do
+   `nginx -t` on the running container).
+ * `reload`: reload the OpenResty configuration.
+ * `restart`: restart OpenResty. **N**.**B.**: It clears the shared
+   memory zone.
+ * `stop`: stop OpenResty.
+ * `logs`: show the OpenResty logs.
+
 ## Using this code
 
 For a detailed description of the usage of this code please refer to
