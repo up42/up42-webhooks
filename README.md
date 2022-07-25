@@ -11,7 +11,7 @@ It is divided in several parts:
     [pipedream](https://pipedream.com).
  2. Server side version using an [OpenResty](https://openresty.org) based minimal
     setup that relies on pipedream for request validation and
-    forward the webhook to OpenResty using
+    forward the webhook to OpenResty. Using
     [ngrok](https://ngrok.com) to create a tunnel. In our OpenResty
     instance we keep a record of the received webhooks.
 
