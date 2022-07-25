@@ -9,11 +9,11 @@ It is divided in several parts:
 
  1. Low code version with Python snippets to be used together with
     [pipedream](https://pipedream.com).
- 2. Server side version with a light Python client to work with
-    webhooks and a [OpenResty](https://openresty.org) based minimal
-    setup that just does Incoming HTTP request validation and leaves
-    it there. Is then up to you to add your custom server side code to
-    do something with the incoming webhook. (To be added)
+ 2. Server side version using an [OpenResty](https://openresty.org) based minimal
+    setup that relies on pipedream for request validation and
+    forward the webhook to OpenResty using
+    [ngrok](https://ngrok.com) to create a tunnel. In our OpenResty
+    instance we keep a record of the received webhooks.
 
 ## Pipedream snippets
 
@@ -76,8 +76,9 @@ The Makefile has the following targets:
 For a detailed description of the usage of this code please refer to
 the UP42 blog posts.
 
- * [Blog post on the "low code" version](https://up42.com/blog/tech/first-step-into-webhooks-no-code-required)
+ * [Blog post on the "low code" version](https://up42.com/blog/tech/first-step-into-webhooks-no-code-required).
 
+ * [Blog post on the server side setup](https://sdk.up42.com/webhooks/).
 
 ## License
 
