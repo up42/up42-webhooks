@@ -15,6 +15,14 @@ It is divided in two parts:
     [ngrok](https://ngrok.com) to create a tunnel. In our OpenResty
     instance we use embebbed Lua to keep a record of the received webhooks.
 
+## Requirements
+
+To be able to run the **server side** version of the code you need:
+
+ 1. [docker](https://docs.docker.com/install/).
+ 2. [GNU make](https://www.gnu.org/software/make/).
+ 3. [Jupyter](https://juypter.org).
+
 ## Pipedream snippets
 
 The pipedream snippets are in the snippets directory. And the
