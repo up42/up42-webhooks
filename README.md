@@ -22,6 +22,8 @@ To be able to run the **server side** version of the code you need:
  1. [docker](https://docs.docker.com/install/).
  2. [GNU make](https://www.gnu.org/software/make/).
  3. [Jupyter](https://juypter.org).
+ 4. [cURL](https://curl.haxx.se).
+ 5. [jq](https://stedolan.github.io/jq/).
 
 ## Pipedream snippets
 
