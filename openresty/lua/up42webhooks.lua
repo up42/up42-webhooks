@@ -68,6 +68,9 @@ function M.set_key_value_webhook()
    end
 end
 
+-- Represents the total number of webhooks.
+local total_number_webhooks = 0
+
 -- Dumps all the webhooks that have been stored.
 -- Side effects only. No return.
 function M.dump_webhooks()
@@ -77,11 +80,14 @@ function M.dump_webhooks()
    for _, k in ipairs(keys) do
       ngx.say(rcvd:get(k))
    end
+   -- Set the total number of webhooks. It needs to be retrieved from
+   -- the keys available in the dict to persist.
+   total_number_webhooks = #keys
 end
 
 -- Prints the total number of items in the shared dict.
 function M.dump_cardinality()
-   return ngx.say(format('{"number_webhooks_received": %d}',  counter))
+   return ngx.say(format('{"number_webhooks_received": %d}', total_number_webhooks))
 end
 
 -- Return the module table.
