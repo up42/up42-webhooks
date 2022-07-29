@@ -44,7 +44,7 @@ function M.dec()
    return counter
 end
 
--- Return a string stating the sucess or failure of storing the data.
+-- Return a string stating the success or failure of storing the data.
 function M.set_key_value_webhook()
    -- Read the request body.
    ngx.req.read_body()
