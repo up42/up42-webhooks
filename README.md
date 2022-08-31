@@ -88,7 +88,7 @@ the UP42 blog posts.
 
  * [Blog post on the "low code" version](https://up42.com/blog/tech/first-step-into-webhooks-no-code-required).
 
- * [Blog post on the server side setup](https://sdk.up42.com/webhooks/).
+ * [Blog post on the server side setup](https://up42.com/blog/tech/webhooks-exploring-local-developments-openresty).
 
 ## License
 
